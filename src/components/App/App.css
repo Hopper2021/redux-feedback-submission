@@ -21,3 +21,17 @@
 h4 {
   font-style: italic;
 }
+
+p {
+  margin: 0;
+}
+
+.question-div {
+  text-align: center;
+}
+
+.input-div {
+  display: inline-block;
+  text-align: left;
+  margin: 0;
+}
