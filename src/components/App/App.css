@@ -22,16 +22,20 @@ h4 {
   font-style: italic;
 }
 
-p {
-  margin: 0;
+h1 {
+  margin-bottom: 50px;
 }
 
-.question-div {
-  text-align: center;
+.input-question {
+  margin: 0;
 }
 
 .input-div {
   display: inline-block;
   text-align: left;
   margin: 0;
+}
+
+.feedback-thank-you {
+  font-weight: 300;
 }
