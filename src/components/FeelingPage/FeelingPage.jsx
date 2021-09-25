@@ -1,6 +1,7 @@
 
 
 function FeelingPage() {
+
     return(
         <div className="question-container">
             <h1>How are you feeling today?</h1>
@@ -12,3 +13,5 @@ function FeelingPage() {
         </div>
     )
 }
+
+export default FeelingPage;
