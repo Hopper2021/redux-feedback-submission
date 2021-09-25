@@ -1,14 +1,22 @@
 import { useState } from 'react'; 
+import { useDispatch } from 'react-redux'; 
+import { useHistory } from 'react-router-dom';
 
 function SupportedPage() {
     const [support, setSupport] = useState('');
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleNext = (event) => {
+        event.preventDefault();
+
         dispatch({
             type: 'SET_SUPPORT',
             url: '/supported',
             data: { support: support }
         })
+        history.push('/comment');
+        setSupport('');
     }
 
     return(
