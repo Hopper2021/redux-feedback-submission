@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
+import FeelingPage from '../FeelingPage/FeelingPage';
 
 function App() {
 
@@ -11,14 +12,7 @@ function App() {
         <h4>Don't forget it!</h4>
       </header>
       <form>
-        <div className="question-container">
-          <h1>How are you feeling today?</h1>
-          <div className="input-div">
-            <p className="input-question">Feeling?</p>
-            <input type="number" />
-            <button className="next-button">Next</button>
-          </div>
-        </div>
+        <FeelingPage />
         <div className="question-container">
           <h1>How well are you understanding the content?</h1>
           <div className="input-div">
