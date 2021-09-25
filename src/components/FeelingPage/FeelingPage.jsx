@@ -4,21 +4,23 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 function FeelingPage() {
+    // useState is grabbing feeling from page input
     const [feeling, setFeeling] = useState('');
+
+    // dispatch is sending feeling to feelingReducer is index.jsx
     const dispatch = useDispatch();
     const history = useHistory();
 
     const handleNext = (event) => { // Is event only needed on forms to call prevent default?
         event.preventDefault();
 
-        console.log('Adding feeling rating:', feeling);
-
         dispatch({
             type: 'SET_FEELING',
             url: '/feeling',
             payload: { feeling: feeling }
         });
-        history.push('/submit') // This is the name of the url for SubmitPage
+        history.push('/understanding') // url of the next page
+        setFeeling('');
     }
 
     return(
@@ -31,8 +33,11 @@ function FeelingPage() {
                         type="number"
                         value={feeling}
                         placeholder="1 - 5"
+                        // setFeeling sets the value of the input to feeling in useState
                         onChange={(event) => setFeeling(event.target.value)}
                     />
+                    {/* When next button is clicked, handleSubmit is called for the form 
+                        history.push is what navigates you to the next page*/}
                     <button 
                         type="submit"
                         className="next-button"
