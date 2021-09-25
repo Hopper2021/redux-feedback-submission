@@ -1,5 +1,8 @@
+import { useState } from 'react';
+
 function CommentPage() {
-    
+    const [comment, setComment] = useState('');
+
     return(
         <div className="question-container">
             <h1>Any comments you want to leave?</h1>
