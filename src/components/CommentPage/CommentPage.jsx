@@ -1,7 +1,19 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 function CommentPage() {
     const [comment, setComment] = useState('');
+    const dispatch = useDispatch();
+
+    const handleNext = (event) => {
+        event.preventDefault();
+
+        dispatch({
+            type: 'SET_COMMENT',
+            url: '/comment',
+            payload: { comment: comment }
+        })
+    }
 
     return(
         <div className="question-container">
