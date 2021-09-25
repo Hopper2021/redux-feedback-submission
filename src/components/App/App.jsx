@@ -1,8 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import FeelingPage from '../FeelingPage/FeelingPage';
 import { HashRouter as Router, Route } from 'react-router-dom';
+import FeelingPage from '../FeelingPage/FeelingPage';
+import UnderstandingPage from '../UnderstandingPage/UnderstandingPage';
+import SupportedPage from '../SupportedPage/SupportedPage';
+import CommentPage from '../CommentPage/CommentPage';
+import SubmitPage from '../SubmitPage/SubmitPage';
 
 
 function App() {
@@ -18,46 +22,22 @@ function App() {
           <Route>
             <FeelingPage />
           </Route>
+          <Route>
+            <UnderstandingPage />
+          </Route>
+          <Route>
+            <SupportedPage />
+          </Route>
+          <Route>
+            <CommentPage />
+          </Route>
+          <Route>
+            <SubmitPage />
+          </Route>
+          <Route>
+            <ThankYouPage />
+          </Route>
         </Router>
-        <div className="question-container">
-          <h1>How well are you understanding the content?</h1>
-          <div className="input-div">
-            <p className="input-question">Understanding?</p>
-            <input type="number" />
-            <button className="next-button">Next</button>
-          </div>
-        </div>
-        <div className="question-container">
-          <h1>How well are you being supported?</h1>
-          <div className="input-div">
-            <p className="input-question">Support?</p>
-            <input type="number" />
-            <button className="next-button">Next</button>
-          </div>
-        </div>
-        <div className="question-container">
-          <h1>Any comments you want to leave?</h1>
-          <div className="input-div">
-            <p className="input-question">Comments?</p>
-            <input type="number" />
-            <button className="next-button">Next</button>
-          </div>
-        </div>
-        <div className="review-container">
-          <h1>Review Your Feedback</h1>
-          <p>Feelings:</p>
-          <p>Understanding:</p>
-          <p>Support:</p>
-          <p>Comments:</p>
-          <button className="submit-button">Submit</button>
-        </div>
-        <div className="thank-you-container">
-          <h1>Feedback!</h1>
-          <div>
-            <h1 className="feedback-thank-you">Thank you!</h1>
-            <button>Leave New Feedback</button>
-          </div>
-        </div>
       </form>
     </div>
   );
