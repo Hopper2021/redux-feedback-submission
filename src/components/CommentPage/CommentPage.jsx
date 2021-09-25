@@ -1,12 +1,22 @@
 function CommentPage() {
+    
     return(
         <div className="question-container">
             <h1>Any comments you want to leave?</h1>
-            <div className="input-div">
-                <p className="input-question">Comments?</p>
-                <input type="number" />
-                <button className="next-button">Next</button>
-            </div>
+            <form onSubmit={handleNext}>
+                <div className="input-div">
+                    <p className="input-question">Understanding?</p>
+                    <input 
+                        type="number"
+                        placeholder="1 - 5"
+                        value={comment}
+                        onChange={event => setComment(event.target.value)}/>
+                    <button 
+                        type="submit"
+                        className="next-button"
+                    >Next</button>
+                </div>
+            </form>
         </div>
     )
 }
