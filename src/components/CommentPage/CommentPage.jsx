@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 function CommentPage() {
     const [comment, setComment] = useState('');
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleNext = (event) => {
         event.preventDefault();
@@ -13,6 +15,8 @@ function CommentPage() {
             url: '/comment',
             payload: { comment: comment }
         })
+        history.push('/submit');
+        setComment('');
     }
 
     return(
