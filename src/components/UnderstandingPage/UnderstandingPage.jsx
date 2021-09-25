@@ -13,7 +13,7 @@ function UnderstandingPage () {
     dispatch({
         type: 'SET_UNDERSTANDING',
         url: '/understanding',
-        data: { understanding: understanding }
+        payload: { understanding: understanding }
     })
     history.push('/supported');
     setUnderstanding('');

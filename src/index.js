@@ -10,21 +10,21 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 
 const feelingReducer = (state = [], action) => {
     if (action.type === 'SET_FEELING') {
-        return action.payload.feeling;
+        return [...state, action.payload.feeling];
     }
     return state;
 }
 
 const understandingReducer = (state = [], action) => {
     if (action.type === 'SET_UNDERSTANDING') {
-        return action.payload.understanding;
+        return [...state, action.payload.understanding];
     }
     return state;
 }
 
 const supportReducer = (state = [], action) => {
     if (action.type === 'SET_SUPPORT'){
-        return action.payload.support;
+        return [...state, action.payload.support];
     }
     return state;
 }

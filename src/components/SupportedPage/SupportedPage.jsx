@@ -13,7 +13,7 @@ function SupportedPage() {
         dispatch({
             type: 'SET_SUPPORT',
             url: '/supported',
-            data: { support: support }
+            payload: { support: support }
         })
         history.push('/comment');
         setSupport('');
