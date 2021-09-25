@@ -1,12 +1,25 @@
+import { useState } from 'react'; 
+
 function SupportedPage() {
+    const [support, setSupport] = useState('');
+
     return(
         <div className="question-container">
             <h1>How well are you being supported?</h1>
-            <div className="input-div">
-                <p className="input-question">Support?</p>
-                <input type="number" />
-                <button className="next-button">Next</button>
-            </div>
+            <form onSubmit={handleNext}>
+                <div className="input-div">
+                    <p className="input-question">Understanding?</p>
+                    <input 
+                        type="number"
+                        placeholder="1 - 5"
+                        value={support}
+                        onChange={event => setSupport(event.target.value)}/>
+                    <button 
+                        type="submit"
+                        className="next-button"
+                    >Next</button>
+                </div>
+            </form>
         </div>
     )
 }

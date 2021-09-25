@@ -8,6 +8,8 @@ function UnderstandingPage () {
     const history = useHistory();
 
     const handleNext = (event) => {
+    event.preventDefault();
+
     dispatch({
         type: 'SET_UNDERSTANDING',
         url: '/understanding',
@@ -16,7 +18,6 @@ function UnderstandingPage () {
     history.push('/supported');
     setUnderstanding('');
     };
-    
 
     return(
         <div className="question-container">
@@ -26,7 +27,7 @@ function UnderstandingPage () {
                     <p className="input-question">Understanding?</p>
                     <input 
                         type="number"
-                        placeholder="1 - 5" 
+                        placeholder="1 - 5"
                         value={understanding}
                         onChange={event => setUnderstanding(event.target.value)}/>
                     <button 
@@ -38,4 +39,5 @@ function UnderstandingPage () {
         </div>
     )
 }
+
 export default UnderstandingPage;
