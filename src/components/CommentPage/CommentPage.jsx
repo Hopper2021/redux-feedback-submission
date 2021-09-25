@@ -24,7 +24,7 @@ function CommentPage() {
             <h1>Any comments you want to leave?</h1>
             <form onSubmit={handleNext}>
                 <div className="input-div">
-                    <p className="input-question">Understanding?</p>
+                    <p className="input-question">Comment?</p>
                     <input 
                         type="number"
                         placeholder="1 - 5"

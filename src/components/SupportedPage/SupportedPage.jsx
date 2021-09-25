@@ -24,7 +24,7 @@ function SupportedPage() {
             <h1>How well are you being supported?</h1>
             <form onSubmit={handleNext}>
                 <div className="input-div">
-                    <p className="input-question">Understanding?</p>
+                    <p className="input-question">Support?</p>
                     <input 
                         type="number"
                         placeholder="1 - 5"

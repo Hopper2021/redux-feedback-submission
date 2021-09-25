@@ -28,13 +28,13 @@ function App() {
           <Route path="/supported">
             <SupportedPage />
           </Route>
-          <Route path="comment">
+          <Route path="/comment">
             <CommentPage />
           </Route>
-          <Route path="submit">
+          <Route path="/submit">
             <SubmitPage />
           </Route>
-          <Route path="thankYou">
+          <Route path="/thankYou">
             <ThankYouPage />
           </Route>
         </Router>
