@@ -2,6 +2,9 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
+import UnderstandingPage from '../UnderstandingPage/UnderstandingPage';
+
 
 function FeelingPage() {
     // useState is grabbing feeling from page input
@@ -38,10 +41,10 @@ function FeelingPage() {
                     />
                     {/* When next button is clicked, handleSubmit is called for the form 
                         history.push is what navigates you to the next page*/}
-                    <button 
-                        type="submit"
-                        className="next-button"
-                    >Next</button>
+                        <button 
+                            type="submit"
+                            className="next-button"
+                            >Next</button>
                 </div>
             </form>
         </div>
