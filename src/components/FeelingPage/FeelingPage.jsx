@@ -1,6 +1,8 @@
-
+import axios from 'axios';
+import { useState } from 'react';
 
 function FeelingPage() {
+    const [feeling, setFeeling] = useState('');
 
     return(
         <div className="question-container">
