@@ -1,10 +1,6 @@
-import axios from 'axios';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { HashRouter as Router, Route } from 'react-router-dom';
-import UnderstandingPage from '../UnderstandingPage/UnderstandingPage';
-
 
 function FeelingPage() {
     // useState is grabbing feeling from page input
@@ -12,6 +8,7 @@ function FeelingPage() {
 
     // dispatch is sending feeling to feelingReducer is index.jsx
     const dispatch = useDispatch();
+    // Used to bring the user to the next page after dispatch
     const history = useHistory();
 
     const handleNext = (event) => { // Is event only needed on forms to call prevent default?
@@ -44,7 +41,7 @@ function FeelingPage() {
                         <button 
                             type="submit"
                             className="next-button"
-                            >Next</button>
+                        >Next</button>
                 </div>
             </form>
         </div>
