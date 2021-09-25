@@ -1,7 +1,18 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 function UnderstandingPage () {
     const [understanding, setUnderstanding] = useState('');
+    const dispatch = useDispatch();
+
+    dispatch({
+        type: 'SET_UNDERSTANDING',
+        url: '/understanding',
+        data: { understanding: understanding }
+    }).then({
+        
+    })
+    
 
     return(
         <div className="question-container">
