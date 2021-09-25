@@ -26,8 +26,8 @@ function CommentPage() {
                 <div className="input-div">
                     <p className="input-question">Comment?</p>
                     <input 
-                        type="number"
-                        placeholder="1 - 5"
+                        type="text"
+                        placeholder="Comment"
                         value={comment}
                         onChange={event => setComment(event.target.value)}/>
                     <button 
