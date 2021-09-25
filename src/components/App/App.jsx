@@ -19,22 +19,22 @@ function App() {
         <h4>Don't forget it!</h4>
       </header>
         <Router>
-          <Route>
+          <Route path="/">
             <FeelingPage />
           </Route>
-          <Route>
+          <Route path="/understanding">
             <UnderstandingPage />
           </Route>
-          <Route>
+          <Route path="/supported">
             <SupportedPage />
           </Route>
-          <Route>
+          <Route path="comment">
             <CommentPage />
           </Route>
-          <Route>
+          <Route path="submit">
             <SubmitPage />
           </Route>
-          <Route>
+          <Route path="thankYou">
             <ThankYouPage />
           </Route>
         </Router>
