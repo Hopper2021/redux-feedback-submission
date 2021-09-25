@@ -7,6 +7,7 @@ import UnderstandingPage from '../UnderstandingPage/UnderstandingPage';
 import SupportedPage from '../SupportedPage/SupportedPage';
 import CommentPage from '../CommentPage/CommentPage';
 import SubmitPage from '../SubmitPage/SubmitPage';
+import ThankYouPage from '../ThankYouPage/ThankYouPage';
 
 
 function App() {
@@ -17,7 +18,6 @@ function App() {
         <h1 className='App-title'>Feedback!</h1>
         <h4>Don't forget it!</h4>
       </header>
-      <form>
         <Router>
           <Route>
             <FeelingPage />
@@ -38,7 +38,6 @@ function App() {
             <ThankYouPage />
           </Route>
         </Router>
-      </form>
     </div>
   );
 }
