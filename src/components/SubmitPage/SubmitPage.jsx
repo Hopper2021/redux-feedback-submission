@@ -4,20 +4,20 @@ import { useHistory } from 'react-router-dom';
 import { HashRouter as Router, Link } from 'react-router-dom';
 
 function SubmitPage() {
+    // Pulls out the completed answer object from anwerReducer
     const answerList = useSelector(store => store.answerReducer);
     const history = useHistory();
-    // Might need to make a POST to the server 
-    // and a GET to display the information
+
     const handleSubmit = (event) => {
     event.preventDefault();
-
+    
+    // POST feedback answers as an object in reduxStore to the server
     axios({
         method: 'POST',
         url: '/answers',
         data: answerList
         }).then(response => {
-            // Would a get go here? I dont think so.
-            // There is nothing I want to display on this page...
+            console.log('Feedback successfully submited!');
             history.push('/thankYou')
         }).catch(error => {
             console.log('Error in POST answers: ', error);
@@ -28,6 +28,8 @@ function SubmitPage() {
         <div className="review-container">
             <h1>Review Your Feedback</h1>
             {/* {JSON.stringify(answerList)} */}
+
+            {/* Displays answer properties from previous pages inputs */}
             <form onSubmit={handleSubmit}>
                 <p>Feeling: {answerList.feeling}</p>
                 <p>Understanding: {answerList.understanding}</p>
@@ -37,6 +39,7 @@ function SubmitPage() {
                     type="submit"
                     className="submit-button">Submit</button>
             </form>
+            {/* Allows user to navigate to previous page to change input answers */}
             <Router>
                 <Link to="/comment">
                     <button>Back</button>

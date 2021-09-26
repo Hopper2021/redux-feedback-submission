@@ -12,6 +12,8 @@ function CommentPage() {
     const handleNext = (event) => {
         event.preventDefault();
         
+        // Blank comments are allowed
+
         dispatch({
             type: 'SET_COMMENT',
             url: '/comment',

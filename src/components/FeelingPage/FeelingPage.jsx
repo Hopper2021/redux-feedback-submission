@@ -13,11 +13,13 @@ function FeelingPage() {
 
     const handleNext = (event) => { // Is event only needed on forms to call prevent default?
         event.preventDefault();
-        
+        // Prevents empty values
         if ( feeling === '' ) {
+            // return jumps out of function,
+            // which prevents the user from continuing to the next page
             return alert('Please enter a value');
         }
-        
+        // Sends updated feeling to answerComponent to be housed in reduxStore
         dispatch({
             type: 'SET_FEELING',
             url: '/feeling',
@@ -29,12 +31,16 @@ function FeelingPage() {
 
     return(
         <div className="question-container"> 
-            <h1>How are you feeling today?</h1> {/* Does a form need to be around all of these routes? Or just each question? */}
+            <h1>How are you feeling today?</h1>
+            {/* handleNext is called onSubmit, which is attached 
+                to when the Next button is clicked */}
             <form onSubmit={handleNext}>
                 <div className="input-div">
                     <p className="input-question">Feeling?</p>
                     <input 
+                        // Number type does not allow text
                         type="number"
+                        // default value of useState
                         value={feeling}
                         placeholder="1 - 5"
                         // setFeeling sets the value of the input to feeling in useState

@@ -9,7 +9,10 @@ import SubmitPage from '../SubmitPage/SubmitPage';
 import ThankYouPage from '../ThankYouPage/ThankYouPage';
 import AdminPage from '../AdminPage/AdminPage';
 
-
+/* Please refer to FeelingPage for code comments for the following pages
+   due to components being almost identical: 
+   
+   FeelingPage, UnderstandPage, SupportPage, CommentPage */
 function App() {
 
   return (
@@ -18,6 +21,10 @@ function App() {
         <h1 className='App-title'>Feedback!</h1>
         <h4>Don't forget it!</h4>
       </header>
+        {/* All Page Routes exist in App.jsx
+            Back button Links exist inside of each components
+            POST exists inside SubmitPage
+            GET exists inside AdminPage */}
         <Router>
           <Route exact path="/">
             <FeelingPage />
