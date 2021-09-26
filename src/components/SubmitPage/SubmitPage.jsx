@@ -13,7 +13,7 @@ function SubmitPage() {
     axios({
         method: 'POST',
         url: '/answers',
-        data: { answerList }
+        data: answerList
         }).then(response => {
             // Would a get go here? I dont think so.
             // There is nothing I want to display on this page...
@@ -28,10 +28,10 @@ function SubmitPage() {
             <h1>Review Your Feedback</h1>
             {/* {JSON.stringify(answerList)} */}
             <form onSubmit={handleSubmit}>
-                <p>Feeling: {answerList[0]}</p>
-                <p>Understanding: {answerList[1]}</p>
-                <p>Support: {answerList[2]}</p>
-                <p>Comments: {answerList[3]}</p>
+                <p>Feeling: {answerList.feeling}</p>
+                <p>Understanding: {answerList.understanding}</p>
+                <p>Support: {answerList.support}</p>
+                <p>Comments: {answerList.comment}</p>
                 <button 
                     type="submit"
                     className="submit-button">Submit</button>
