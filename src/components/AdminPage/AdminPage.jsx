@@ -1,8 +1,48 @@
 import axios from 'axios';
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
+import * as React from 'react';
+import { styled } from '@mui/material/styles';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 
 function AdminPage() {
     const [answerList, setAnswerList] = useState([]);
+
+    const StyledTableCell = styled(TableCell)(({ theme }) => ({
+        [`&.${tableCellClasses.head}`]: {
+          backgroundColor: theme.palette.common.black,
+          color: theme.palette.common.white,
+        },
+        [`&.${tableCellClasses.body}`]: {
+          fontSize: 14,
+        },
+      }));
+      
+      const StyledTableRow = styled(TableRow)(({ theme }) => ({
+        '&:nth-of-type(odd)': {
+          backgroundColor: theme.palette.action.hover,
+        },
+        // hide last border
+        '&:last-child td, &:last-child th': {
+          border: 0,
+        },
+      }));
+
+    function createData(feeling, understanding, support, comments) {
+        return { feeling, understanding, support, comments };
+      }
+      
+      const rows = [
+        createData('Feeling', 159, 6.0, 24, 4.0),
+        createData('Understanding', 237, 9.0, 37, 4.3),
+        createData('Support', 262, 16.0, 24, 6.0),
+        createData('Comments', 305, 3.7, 67, 4.3)
+      ];
 
     useEffect(() => {
         getAnswers()
@@ -23,28 +63,32 @@ function AdminPage() {
     return(
         <>
         <h1>Admin Page</h1>
-        <table className="admin-table">
-            <thead>
-                <tr>
-                    <th>Feeling</th>
-                    <th>Understanding</th>
-                    <th>Support</th>
-                    <th>Comments</th>
-                </tr>
-            </thead>
-            <tbody>
-                {answerList.map(answer => (
-                    <tr key={answer.id}>
-                        <td>{answer.feeling}</td>
-                        <td>{answer.understanding}</td>
-                        <td>{answer.support}</td>
-                        <td>{answer.comments}</td>
-                    </tr>
-                ))}
-            </tbody>
-        </table>
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+              <StyledTableRow>
+                <StyledTableCell align="center">Feeling</StyledTableCell>
+                <StyledTableCell align="center">Understanding</StyledTableCell>
+                <StyledTableCell align="center">Support</StyledTableCell>
+                <StyledTableCell align="center">Comments</StyledTableCell>
+              </StyledTableRow>
+            </TableHead>
+            <TableBody>
+                {answerList.map((answer, index) => (
+                <StyledTableRow
+                  key={index}
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                    <StyledTableCell align="center">{answer.feeling}</StyledTableCell>
+                    <StyledTableCell align="center">{answer.understanding}</StyledTableCell>
+                    <StyledTableCell align="center">{answer.support}</StyledTableCell>
+                    <StyledTableCell align="left">{answer.comments}</StyledTableCell>
+                  </StyledTableRow>
+                  ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
         </>
-    )
+      );
 }
 
 export default AdminPage;
