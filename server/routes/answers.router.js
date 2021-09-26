@@ -6,11 +6,11 @@ router.get('/', (req, res) => {
     const sqlText = `SELECT * FROM "feedback" ORDER BY "id" DESC`;
     pool.query(sqlText)
     .then((result) => {
-        console.log(`Retreived feedback from the database.`, result);
+        console.log(`Successfully retreived answers from the database.`, result);
         res.send(result.rows);
     })
     .catch((error) => {
-        console.log(`Error retreiving feedback from the database.`, error);
+        console.log(`Error retreiving answers from the database.`, error);
         res.sendStatus(500);
     })
 })
