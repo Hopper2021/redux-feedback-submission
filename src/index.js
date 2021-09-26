@@ -31,10 +31,6 @@ const answerReducer = (state = blankAnswer, action) => {
 const storeInstance = createStore(
     combineReducers({
         answerReducer
-        // feelingReducer,
-        // understandingReducer,
-        // supportReducer,
-        // commentReducer
     }), 
     applyMiddleware(logger),
 )

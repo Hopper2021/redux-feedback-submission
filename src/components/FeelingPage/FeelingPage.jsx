@@ -13,7 +13,11 @@ function FeelingPage() {
 
     const handleNext = (event) => { // Is event only needed on forms to call prevent default?
         event.preventDefault();
-
+        
+        if ( feeling === '' ) {
+            return alert('Please enter a value');
+        }
+        
         dispatch({
             type: 'SET_FEELING',
             url: '/feeling',

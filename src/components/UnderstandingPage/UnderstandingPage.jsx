@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom'; 
+import { HashRouter as Router, Link } from 'react-router-dom';
 
 function UnderstandingPage () {
     const [understanding, setUnderstanding] = useState('');
@@ -9,6 +10,10 @@ function UnderstandingPage () {
 
     const handleNext = (event) => {
     event.preventDefault();
+
+    if ( understanding === '' ) {
+        return alert('Please enter a value');
+    }
 
     dispatch({
         type: 'SET_UNDERSTANDING',
@@ -36,6 +41,11 @@ function UnderstandingPage () {
                     >Next</button>
                 </div>
             </form>
+            <Router>
+                <Link to="/">
+                    <button>Back</button>
+                </Link>
+            </Router>
         </div>
     )
 }

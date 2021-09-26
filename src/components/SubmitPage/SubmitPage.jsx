@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import { HashRouter as Router, Link } from 'react-router-dom';
 
 function SubmitPage() {
     const answerList = useSelector(store => store.answerReducer);
@@ -36,6 +37,11 @@ function SubmitPage() {
                     type="submit"
                     className="submit-button">Submit</button>
             </form>
+            <Router>
+                <Link to="/comment">
+                    <button>Back</button>
+                </Link>
+            </Router>
         </div>
     )
 }

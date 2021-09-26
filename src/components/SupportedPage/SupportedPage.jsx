@@ -1,6 +1,7 @@
 import { useState } from 'react'; 
 import { useDispatch } from 'react-redux'; 
 import { useHistory } from 'react-router-dom';
+import { HashRouter as Router, Link } from 'react-router-dom';
 
 function SupportedPage() {
     const [support, setSupport] = useState('');
@@ -9,6 +10,10 @@ function SupportedPage() {
 
     const handleNext = (event) => {
         event.preventDefault();
+
+        if ( support === '' ) {
+            return alert('Please enter a value');
+        }
 
         dispatch({
             type: 'SET_SUPPORT',
@@ -36,6 +41,11 @@ function SupportedPage() {
                     >Next</button>
                 </div>
             </form>
+            <Router>
+                <Link to="/understanding">
+                    <button>Back</button>
+                </Link>
+            </Router>
         </div>
     )
 }

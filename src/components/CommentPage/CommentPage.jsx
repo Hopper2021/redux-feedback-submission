@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { HashRouter as Router, Link } from 'react-router-dom';
+
 
 function CommentPage() {
     const [comments, setComments] = useState('');
@@ -9,7 +11,7 @@ function CommentPage() {
 
     const handleNext = (event) => {
         event.preventDefault();
-
+        
         dispatch({
             type: 'SET_COMMENT',
             url: '/comment',
@@ -36,6 +38,11 @@ function CommentPage() {
                     >Next</button>
                 </div>
             </form>
+            <Router>
+                <Link to="/supported">
+                    <button>Back</button>
+                </Link>
+            </Router>
         </div>
     )
 }
