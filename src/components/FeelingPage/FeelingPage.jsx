@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import Paper from '@mui/material/Paper';
 
 function FeelingPage() {
     // useState is grabbing feeling from page input
@@ -33,31 +37,34 @@ function FeelingPage() {
     }
 
     return(
-        <div className="question-container"> 
+        <Paper elevation={6} className="question-container"> 
             <h1>How are you feeling today?</h1>
             {/* handleNext is called onSubmit, which is attached 
                 to when the Next button is clicked */}
             <form onSubmit={handleNext}>
                 <div className="input-div">
-                    <p className="input-question">Feeling?</p>
-                    <input 
+                    <Box
+                        component="form" sx={{'& > :not(style)': { m: 1, width: '25ch' },}}
+                        noValidate autoComplete="off"
+                    >
+                    <TextField id="outlined-basic" label="1 - 5" variant="outlined"
                         // Number type does not allow text
                         type="number"
                         // default value of useState
                         value={feeling}
-                        placeholder="1 - 5"
                         // setFeeling sets the value of the input to feeling in useState
                         onChange={(event) => setFeeling(event.target.value)}
                     />
+                    </Box>
                     {/* When next button is clicked, handleSubmit is called for the form 
                         history.push is what navigates you to the next page*/}
-                        <button 
-                            type="submit"
+                        <Button variant="contained"
                             className="next-button"
-                        >Next</button>
+                            type="submit"
+                        >Next</Button>
                 </div>
             </form>
-        </div>
+        </Paper>
     )
 }
 

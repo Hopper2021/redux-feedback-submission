@@ -24,6 +24,11 @@ h4 {
 
 h1 {
   margin-bottom: 50px;
+  display: inline-block;
+}
+
+form {
+  display: block;
 }
 
 .input-question {
@@ -38,4 +43,15 @@ h1 {
 
 .feedback-thank-you {
   font-weight: 300;
+}
+
+.question-container {
+  margin: 0;
+  display: inline-block;
+  text-align: center;
+  padding: 70px;
+}
+
+.next-button {
+  float: right;
 }
