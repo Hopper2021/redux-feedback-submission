@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 function CommentPage() {
-    const [comment, setComment] = useState('');
+    const [comments, setComments] = useState('');
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -13,10 +13,10 @@ function CommentPage() {
         dispatch({
             type: 'SET_COMMENT',
             url: '/comment',
-            payload: { comment: comment }
+            payload: { comments: comments }
         })
         history.push('/submit');
-        setComment('');
+        setComments('');
     }
 
     return(
@@ -28,8 +28,8 @@ function CommentPage() {
                     <input 
                         type="text"
                         placeholder="Comment"
-                        value={comment}
-                        onChange={event => setComment(event.target.value)}/>
+                        value={comments}
+                        onChange={event => setComments(event.target.value)}/>
                     <button 
                         type="submit"
                         className="next-button"

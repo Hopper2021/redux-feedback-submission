@@ -31,7 +31,7 @@ function SubmitPage() {
                 <p>Feeling: {answerList.feeling}</p>
                 <p>Understanding: {answerList.understanding}</p>
                 <p>Support: {answerList.support}</p>
-                <p>Comments: {answerList.comment}</p>
+                <p>Comments: {answerList.comments}</p>
                 <button 
                     type="submit"
                     className="submit-button">Submit</button>

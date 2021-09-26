@@ -12,7 +12,7 @@ const blankAnswer = {
     feeling: '',
     understanding: '',
     support: '',
-    comment: ''
+    comments: ''
 };
 
 const answerReducer = (state = blankAnswer, action) => {
@@ -23,7 +23,7 @@ const answerReducer = (state = blankAnswer, action) => {
     } else if (action.type === 'SET_SUPPORT'){
         return {...state, support: action.payload.support};
     } else if (action.type === 'SET_COMMENT') {
-        return {...state, comment: action.payload.comment};
+        return {...state, comments: action.payload.comments};
     }
     return state;
 }

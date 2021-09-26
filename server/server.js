@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const answersRouter = require('./routes/answers.router.js')
+const answersRouter = require('./routes/answers.router.js');
 const PORT = process.env.PORT || 5000;
 
 /** ---------- MIDDLEWARE ---------- **/
