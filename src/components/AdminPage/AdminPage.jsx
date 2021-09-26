@@ -1,6 +1,8 @@
 import axios from 'axios';
+import { useState, useEffect } from 'react'
 
 function AdminPage() {
+    const [answerList, setAnswerList] = useState([]);
 
     const getAnswers = () => {
         axios({
