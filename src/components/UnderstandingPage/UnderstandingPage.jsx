@@ -13,6 +13,9 @@ function UnderstandingPage () {
 
     if ( understanding === '' ) {
         return alert('Please enter a value');
+    } else if ( understanding > 5 ) {
+        alert('Please enter a value between 1 and 5');
+        return setUnderstanding('');
     }
 
     dispatch({

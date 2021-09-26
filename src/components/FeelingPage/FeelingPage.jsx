@@ -18,6 +18,9 @@ function FeelingPage() {
             // return jumps out of function,
             // which prevents the user from continuing to the next page
             return alert('Please enter a value');
+        } else if ( feeling > 5 ) {
+            alert('Please enter a value between 1 and 5');
+            return setFeeling('');
         }
         // Sends updated feeling to answerComponent to be housed in reduxStore
         dispatch({
