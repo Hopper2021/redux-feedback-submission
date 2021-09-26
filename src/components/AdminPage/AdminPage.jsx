@@ -4,6 +4,10 @@ import { useState, useEffect } from 'react'
 function AdminPage() {
     const [answerList, setAnswerList] = useState([]);
 
+    useEffect(() => {
+        getAnswers()
+    },[]);
+
     const getAnswers = () => {
         axios({
             method: 'GET',
@@ -29,12 +33,14 @@ function AdminPage() {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>A feeling</td>
-                    <td>something I understand</td>
-                    <td>I feel supported</td>
-                    <td>A comment about stuff</td>
-                </tr>
+                {answerList.map(answer => (
+                    <tr>
+                        <td>{answer.feeling}</td>
+                        <td>{answer.understanding}</td>
+                        <td>{answer.support}</td>
+                        <td>{answer.comments}</td>
+                    </tr>
+                ))}
             </tbody>
         </table>
         </>
