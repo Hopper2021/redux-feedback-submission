@@ -28,27 +28,6 @@ const answerReducer = (state = blankAnswer, action) => {
     return state;
 }
 
-// const understandingReducer = (state = '', action) => {
-//     if (action.type === 'SET_UNDERSTANDING') {
-//         return [...state, action.payload.understanding];
-//     }
-//     return state;
-// }
-
-// const supportReducer = (state = '', action) => {
-//     if (action.type === 'SET_SUPPORT'){
-//         return [...state, action.payload.support];
-//     }
-//     return state;
-// }
-
-// const commentReducer = (state = '', action) => {
-//     if (action.type === 'SET_COMMENT') {
-//         return [...state, action.payload.comment];
-//     }
-//     return state;
-// }
-
 const storeInstance = createStore(
     combineReducers({
         answerReducer

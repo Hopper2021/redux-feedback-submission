@@ -7,6 +7,7 @@ import SupportedPage from '../SupportedPage/SupportedPage';
 import CommentPage from '../CommentPage/CommentPage';
 import SubmitPage from '../SubmitPage/SubmitPage';
 import ThankYouPage from '../ThankYouPage/ThankYouPage';
+import AdminPage from '../AdminPage/AdminPage';
 
 
 function App() {
@@ -35,6 +36,9 @@ function App() {
           </Route>
           <Route path="/thankYou">
             <ThankYouPage />
+          </Route>
+          <Route path="/admin">
+            <AdminPage />
           </Route>
         </Router>
     </div>
