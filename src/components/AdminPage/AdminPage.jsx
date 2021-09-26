@@ -34,7 +34,7 @@ function AdminPage() {
             </thead>
             <tbody>
                 {answerList.map(answer => (
-                    <tr>
+                    <tr key={answer.id}>
                         <td>{answer.feeling}</td>
                         <td>{answer.understanding}</td>
                         <td>{answer.support}</td>
