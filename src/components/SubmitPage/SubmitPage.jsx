@@ -1,8 +1,10 @@
 import { useSelector } from 'react-redux';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 function SubmitPage() {
     const answerList = useSelector(store => store.answerReducer);
+    const history = useHistory();
     // Might need to make a POST to the server 
     // and a GET to display the information
     const handleSubmit = (event) => {
@@ -12,8 +14,13 @@ function SubmitPage() {
         method: 'POST',
         url: '/answers',
         data: { answerList }
+        }).then(response => {
+            // Would a get go here? I dont think so.
+            // There is nothing I want to display on this page...
+            history.push('/thankYou')
+        }).catch(error => {
+            console.log('Error in POST answers: ', error);
         })
-        history.push('/thankYou')
     }
 
     return(
