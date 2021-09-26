@@ -8,9 +8,9 @@ router.post('/', (req, res) => {
     
     const sqlText = `INSERT INTO "feedback" 
         ("feeling", "understanding", "support", "comments")
-        VALUES ($2, $3, $4, $5)`;
+        VALUES ($1, $2, $3, $4)`;
     pool.query(sqlText, 
-        [answer[0], answer[1], answer[2], answer[3]])
+        [answer.feeling, answer.understanding, answer.support, answer.comments]
         .then((result) => {
             console.log(`Added answers to the database`, answer);
             res.sendStatus(200);            
