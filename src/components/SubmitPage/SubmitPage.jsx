@@ -45,7 +45,7 @@ function SubmitPage() {
                     type="submit"
                 >Submit</Button>
                 <Router>
-                    <Link to="/">
+                    <Link to="/comment">
                         <Button variant="contained">Back</Button>
                     </Link>
                 </Router>

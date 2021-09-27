@@ -58,7 +58,7 @@ function SupportedPage() {
                             type="submit"
                         >Next</Button>
                     <Router>
-                        <Link to="/">
+                        <Link to="/understanding">
                             <Button variant="contained">Back</Button>
                         </Link>
                     </Router>

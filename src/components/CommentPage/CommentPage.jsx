@@ -53,7 +53,7 @@ function CommentPage() {
                             type="submit"
                         >Next</Button>
                     <Router>
-                        <Link to="/">
+                        <Link to="/supported">
                             <Button variant="contained">Back</Button>
                         </Link>
                     </Router>
