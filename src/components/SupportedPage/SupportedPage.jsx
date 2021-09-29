@@ -17,7 +17,7 @@ function SupportedPage() {
 
         if ( support === '' ) {
             return alert('Please enter a value');
-        } else if ( support > 5 || support < 0) {
+        } else if ( support > 5 || support < 1 ) {
             alert('Please enter a value between 1 and 5');
             return setSupport('');
         }

@@ -74,9 +74,12 @@ function AdminPage() {
               </StyledTableRow>
             </TableHead>
             <TableBody>
-                {answerList.map((answer, index) => (
+                {/* To make a subcomponent, pass in 'answer' via props answer={answer} to the component teal text on this page
+                    Then in the component, props would be: ({answer}), and you would call the answer.feeling 
+                    for each property. */}
+                {answerList.map((answer) => (
                 <StyledTableRow
-                  key={index}
+                  key={answer.id}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                     <StyledTableCell align="center">{answer.feeling}</StyledTableCell>
                     <StyledTableCell align="center">{answer.understanding}</StyledTableCell>
