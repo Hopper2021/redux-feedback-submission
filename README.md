@@ -1,6 +1,7 @@
 # Feedback Submission App
 
 Imports:
+- `npm install react`
 - `npm install redux react-redux`
 - `npm install react-router-dom`
 - `npm install @mui/material`
