@@ -17,7 +17,7 @@ The back buttons will bring you to the previous pages if you want to change your
 
 The Pages:
 - How are you feeling today?
-![feeling](images/feeling-page.png)
+![feeling](wireframes/images/feeling-page.png)
 - How well are you understanding the content?
 
 - How well are you being supported?
