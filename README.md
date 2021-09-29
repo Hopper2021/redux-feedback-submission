@@ -11,8 +11,17 @@ Users are asked to answer 4 questions with a value between 1 and 5:
 - How well are you being supported?
 - Would you like to leave any comments?
 
-The first 3 pages will not allow blank values, or values not between 1 and 5. Comments input however can be left blank if the user chooses to.
+The first 3 pages will only allow values between 1 and 5 and will not allow blank values. The comments page can be left blank if the user chooses to.
 
 The back buttons will bring you to the previous pages if you want to change your values.
+
+The Pages:
+- How are you feeling today?
+![feeling](images/feeling-page.png)
+- How well are you understanding the content?
+
+- How well are you being supported?
+
+- Would you like to leave any comments?
 
 
