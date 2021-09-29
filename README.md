@@ -30,15 +30,15 @@ The Pages:
 - How are you feeling today?
 ![feeling](wireframes/images/feeling-page-1.png)
 - How well are you understanding the content?
-![understanding](wireframes/images/understanding-page-2)
+![understanding](wireframes/images/understanding-page-2.png)
 - How well are you being supported?
-![support](wireframes/images/supported-page-3)
+![support](wireframes/images/supported-page-3.png)
 - Would you like to leave any comments?
-![comments](wireframes/images/comment-page-4)
+![comments](wireframes/images/comment-page-4.png)
 - Submission Page
-![submit](wireframes/images/submit-page-5)
+![submit](wireframes/images/submit-page-5.png)
 - Thank you Page
-![Thanks](wireframes/images/thank-you-page-6)
+![Thanks](wireframes/images/thank-you-page-6.png)
 - Admin Page
-![admin](wireframes/images/admin-page-7)
+![admin](wireframes/images/admin-page-7.png)
 
